@@ -1,0 +1,6 @@
+matplotlib>=3.0.2
+nltk>=3.4
+tqdm>=4.29.1
+torch>=1.0.0
+numpy>=1.16.0
+scikit_learn>=0.21.2
