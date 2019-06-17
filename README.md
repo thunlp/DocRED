@@ -1,5 +1,5 @@
 # DocRED
-Dataset and code for baselines for "DocRED: A Large-Scale Document-Level Relation Extraction Dataset"
+Dataset and code for baselines for [DocRED: A Large-Scale Document-Level Relation Extraction Dataset](https://arxiv.org/abs/1906.06127)
 
 ## Cite
 If you use the dataset, please cite this paper:
