@@ -9,7 +9,7 @@ pip install -r requirements.txt
 ```
 
 ## preprocessing data
-Download [metadata](https://cloud.tsinghua.edu.cn/d/99e1c0805eb64736af95/) for baseline method and put them into prepro_data folder.
+Download metadata from [TsinghuaCloud](https://cloud.tsinghua.edu.cn/d/99e1c0805eb64736af95/) or [GoogleDrive](https://drive.google.com/drive/folders/1Ri3LIILKKBi3aBJjUVCOBpGX5PpONHRK)for baseline method and put them into prepro_data folder.
 
 
 ```
