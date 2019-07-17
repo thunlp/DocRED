@@ -26,7 +26,7 @@ CUDA_VISIBLE_DEVICES=0 python3 train.py --model_name BiLSTM --save_name checkpoi
 
 testing:
 ```
-CUDA_VISIBLE_DEVICES=0 python3 test.py --model_name BiLSTM --save_name checkpoint_BiLSTM --train_prefix dev_train --test_prefix dev_test --input_theta 0.3601
+CUDA_VISIBLE_DEVICES=0 python3 test.py --model_name BiLSTM --save_name checkpoint_BiLSTM --train_prefix dev_train --test_prefix dev_dev --input_theta 0.3601
 ```
 
 ## evidence extration
