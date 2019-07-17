@@ -38,7 +38,7 @@ CUDA_VISIBLE_DEVICES=0 python3 train_sp.py --model_name LSTM_SP  --save_name che
 
 testing:
 ```
-CUDA_VISIBLE_DEVICES=0 python3 test_sp.py --model_name LSTM_SP --save_name checkpoint_BiLSTMSP --train_prefix dev_train --test_prefix dev_test --input_theta 0.4619
+CUDA_VISIBLE_DEVICES=0 python3 test_sp.py --model_name LSTM_SP --save_name checkpoint_BiLSTMSP --train_prefix dev_train --test_prefix dev_dev --input_theta 0.4619
 ```
 
 ## evaluation
