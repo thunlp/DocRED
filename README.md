@@ -2,7 +2,7 @@
 Dataset and code for baselines for [DocRED: A Large-Scale Document-Level Relation Extraction Dataset](https://arxiv.org/abs/1906.06127)
 
 ## Codalab
-If you are interested in our dataset, you are welcome to join in the Codalab competition at [DocRED](https://competitions.codalab.org/competitions/23392)
+If you are interested in our dataset, you are welcome to join in the Codalab competition at [DocRED](https://competitions-new.codalab.org/competitions/20147)
 
 ## Cite
 If you use the dataset or the code, please cite this paper:
