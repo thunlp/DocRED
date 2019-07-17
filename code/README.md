@@ -24,7 +24,7 @@ training:
 CUDA_VISIBLE_DEVICES=0 python3 train.py --model_name BiLSTM --save_name checkpoint_BiLSTM --train_prefix dev_train --test_prefix dev_dev
 ```
 
-testing:
+testing (--test_prefix dev_dev for dev set, dev_test for test set):
 ```
 CUDA_VISIBLE_DEVICES=0 python3 test.py --model_name BiLSTM --save_name checkpoint_BiLSTM --train_prefix dev_train --test_prefix dev_dev --input_theta 0.3601
 ```
