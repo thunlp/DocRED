@@ -551,7 +551,7 @@ class Config(object):
 	def test(self, model, model_name, output=False, input_theta=-1):
 		data_idx = 0
 		eval_start_time = time.time()
-		test_result_ignore = []
+		# test_result_ignore = []
 		total_recall_ignore = 0
 
 		test_result = []
@@ -625,10 +625,10 @@ class Config(object):
 										intrain = True
 
 
-								if not intrain:
-									test_result_ignore.append( ((h_idx, t_idx, r) in label, float(predict_re[i,j,r]),  titles[i], self.id2rel[r], index, h_idx, t_idx, r) )
+								# if not intrain:
+								# 	test_result_ignore.append( ((h_idx, t_idx, r) in label, float(predict_re[i,j,r]),  titles[i], self.id2rel[r], index, h_idx, t_idx, r) )
 
-								test_result.append( ((h_idx, t_idx, r) in label, float(predict_re[i,j,r]),  titles[i], self.id2rel[r], index, h_idx, t_idx, r) )
+								test_result.append( ((h_idx, t_idx, r) in label, float(predict_re[i,j,r]), intrain,  titles[i], self.id2rel[r], index, h_idx, t_idx, r) )
 
 							if flag:
 								have_label += 1
@@ -642,7 +642,7 @@ class Config(object):
 				print('| step {:3d} | time: {:5.2f}'.format(data_idx // self.period, (time.time() - eval_start_time)))
 				eval_start_time = time.time()
 
-		test_result_ignore.sort(key=lambda x: x[1], reverse=True)
+		# test_result_ignore.sort(key=lambda x: x[1], reverse=True)
 		test_result.sort(key = lambda x: x[1], reverse=True)
 
 		print ('total_recall', total_recall)
@@ -678,12 +678,13 @@ class Config(object):
 
 		if input_theta==-1:
 			w = f1_pos
+			input_theta = theta
 
 		auc = sklearn.metrics.auc(x = pr_x, y = pr_y)
 		if not self.is_test:
-			logging('ALL   : Theta {:3.4f} | F1 {:3.4f} | AUC {:3.4f}'.format(theta, f1, auc))
+			logging('ALL  : Theta {:3.4f} | F1 {:3.4f} | AUC {:3.4f}'.format(theta, f1, auc))
 		else:
-			logging('ma_f1{:3.4f} | input_theta {:3.4f} test_result F1 {:3.4f} | AUC {:3.4f}'.format(f1, input_theta, f1_arr[w], auc))
+			logging('ma_f1 {:3.4f} | input_theta {:3.4f} test_result F1 {:3.4f} | AUC {:3.4f}'.format(f1, input_theta, f1_arr[w], auc))
 
 		if output:
 			# output = [x[-4:] for x in test_result[:w+1]]
@@ -696,14 +697,19 @@ class Config(object):
 			os.mkdir(self.fig_result_dir)
 		plt.savefig(os.path.join(self.fig_result_dir, model_name))
 
-		input_theta = theta
 		pr_x = []
 		pr_y = []
-		correct = 0
+		correct = correct_in_train = 0
 		w = 0
-		for i, item in enumerate(test_result_ignore):
+		for i, item in enumerate(test_result):
 			correct += item[0]
-			pr_y.append(float(correct) / (i + 1))
+			if item[0] & item[2]:
+				correct_in_train += 1
+			if correct_in_train==correct:
+				p = 0
+			else:
+				p = float(correct - correct_in_train) / (i + 1 - correct_in_train)
+			pr_y.append(p)
 			pr_x.append(float(correct) / total_recall)
 			if item[1] > input_theta:
 				w = i

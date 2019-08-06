@@ -80,22 +80,19 @@ def init(data_file_name, rel2id, max_length = 512, is_training = True, suffix=''
 						fact_in_train.add((n1['name'], n2['name'], rel))
 
 			else:
+				# fix a bug here
+				label['intrain'] = False
+				label['indev_train'] = False
+
 				for n1 in vertexSet[label['h']]:
 					for n2 in vertexSet[label['t']]:
 						if (n1['name'], n2['name'], rel) in fact_in_train:
-							intrain += 1
 							label['intrain'] = True
-						else:
-							notintrain += 1
-							label['intrain'] = False
 
 						if suffix == '_dev' or suffix == '_test':
 							if (n1['name'], n2['name'], rel) in fact_in_dev_train:
-								indevtrain += 1
 								label['indev_train'] = True
-							else:
-								notindevtrain += 1
-								label['indev_train'] = False
+
 
 			new_labels.append(label)
 
@@ -122,10 +119,10 @@ def init(data_file_name, rel2id, max_length = 512, is_training = True, suffix=''
 	# print ('Ma_V', Ma)
 	# print ('Ma_e', Ma_e)
 	# print (suffix)
-	print ('fact_in_train', len(fact_in_train))
-	print (intrain, notintrain)
-	print ('fact_in_devtrain', len(fact_in_dev_train))
-	print (indevtrain, notindevtrain)
+	# print ('fact_in_train', len(fact_in_train))
+	# print (intrain, notintrain)
+	# print ('fact_in_devtrain', len(fact_in_dev_train))
+	# print (indevtrain, notindevtrain)
 
 
 	# saving

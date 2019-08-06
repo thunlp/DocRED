@@ -52,7 +52,7 @@ class EviConfig(object):
 		self.max_length = 512
 		self.pos_num = 2 * self.max_length
 		self.entity_num = self.max_length
-		self.relation_num = 98
+		self.relation_num = 97
 		self.coref_size = 20
 		self.entity_type_size = 20
 		self.max_epoch = 20
