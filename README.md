@@ -8,7 +8,7 @@ Multiple entities in a document generally exhibit complex inter-sentence relatio
 + Along with the human-annotated data, we also offer large-scale distantly supervised data, which enables DocRED to be adopted for both supervised and weakly supervised scenarios.
 
 ## Codalab
-If you are interested in our dataset, you are welcome to join in the Codalab competition at [DocRED](https://competitions-new.codalab.org/competitions/20147)
+If you are interested in our dataset, you are welcome to join in the Codalab competition at [DocRED](https://competitions.codalab.org/competitions/20717)
 
 
 ## Important
