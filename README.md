@@ -1,5 +1,5 @@
 # DocRED
-Dataset and code for baselines for [DocRED: A Large-Scale Document-Level Relation Extraction Dataset](https://arxiv.org/abs/1906.06127)
+Dataset and code for baselines for [DocRED: A Large-Scale Document-Level Relation Extraction Dataset](https://arxiv.org/abs/1906.06127v3)
 
 Multiple entities in a document generally exhibit complex inter-sentence relations, and cannot be well handled by existing relation extraction (RE) methods that typically focus on extracting intra-sentence relations for single entity pairs. In order to accelerate the research on document-level RE, we introduce DocRED, a new dataset constructed from Wikipedia and Wikidata with three features: 
 
@@ -12,7 +12,7 @@ If you are interested in our dataset, you are welcome to join in the Codalab com
 
 
 ## Important
-Sorry, we have changed the computing method for Ignore  F1. The numbers in origin paper and Codalab link will be updated in two days.
+Sorry, we have changed the computing method for Ignore  F1. The numbers in origin paper and Codalab link have been updated.
 
 ## Cite
 If you use the dataset or the code, please cite this paper:
