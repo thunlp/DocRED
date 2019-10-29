@@ -1,6 +1,7 @@
 # Data
 
-Data can be downloaded from [TsinghuaCloud](https://cloud.tsinghua.edu.cn/d/5d8628d7f0b6453a8d7c/) or [Google Drive](https://drive.google.com/drive/folders/1c5-0YwnoJx8NS6CV2f-NoTHR__BdkNqw?usp=sharing).
+Data can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1c5-0YwnoJx8NS6CV2f-NoTHR__BdkNqw?usp=sharing).
+Relation information file has been uploaded.
 
 
 ```
