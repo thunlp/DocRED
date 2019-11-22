@@ -75,7 +75,15 @@ if os.path.isdir(submit_dir) and os.path.isdir(truth_dir):
     tot_relations = len(std)
 
     submission_answer_file = os.path.join(submit_dir, "result.json")
-    submission_answer = json.load(open(submission_answer_file))
+    tmp = json.load(open(submission_answer_file))
+    tmp.sort(key=lambda x: (x['title'], x['h_idx'], x['t_idx'], x['r']))
+    submission_answer = [tmp[0]]
+    for i in range(1, len(tmp)):
+        x = tmp[i]
+        y = tmp[i-1]
+        if (x['title'], x['h_idx'], x['t_idx'], x['r']) != (y['title'], y['h_idx'], y['t_idx'], y['r']):
+            submission_answer.append(tmp[i])
+
     correct_re = 0
     correct_evidence = 0
     pred_evi = 0
