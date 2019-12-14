@@ -646,12 +646,12 @@ class Config(object):
 		test_result.sort(key = lambda x: x[1], reverse=True)
 
 		print ('total_recall', total_recall)
-		plt.xlabel('Recall')
-		plt.ylabel('Precision')
-		plt.ylim(0.2, 1.0)
-		plt.xlim(0.0, 0.6)
-		plt.title('Precision-Recall')
-		plt.grid(True)
+		# plt.xlabel('Recall')
+		# plt.ylabel('Precision')
+		# plt.ylim(0.2, 1.0)
+		# plt.xlim(0.0, 0.6)
+		# plt.title('Precision-Recall')
+		# plt.grid(True)
 
 		pr_x = []
 		pr_y = []
@@ -691,11 +691,11 @@ class Config(object):
 			output = [{'index': x[-4], 'h_idx': x[-3], 't_idx': x[-2], 'r_idx': x[-1], 'r': x[-5], 'title': x[-6]} for x in test_result[:w+1]]
 			json.dump(output, open(self.test_prefix + "_index.json", "w"))
 
-		plt.plot(pr_x, pr_y, lw=2, label=model_name)
-		plt.legend(loc="upper right")
+		# plt.plot(pr_x, pr_y, lw=2, label=model_name)
+		# plt.legend(loc="upper right")
 		if not os.path.exists(self.fig_result_dir):
 			os.mkdir(self.fig_result_dir)
-		plt.savefig(os.path.join(self.fig_result_dir, model_name))
+		# plt.savefig(os.path.join(self.fig_result_dir, model_name))
 
 		pr_x = []
 		pr_y = []
